@@ -3,15 +3,19 @@ fetch(url)
 .then(res => res.json())
 .then(data=> displayFood(data.categories))
 
-function displayFood(categories){
-    // /console.log(categories);
-    const categoryNames = categories.map(categories=> categories.strCategory);
-    const ul = document.getElementById("food-details");
-    for (let i = 0; i < categoryNames.length; i++) {
-        const categories = categoryNames[i];
-        const li = document.createElement("li");
-        li.innerText = categories;
-        ul.appendChild(li);
 
-    }
+const displayFood = categories => {
+    const foodDiv = document.getElementById("food-details");
+    for (let i = 0; i < categories.length; i++) {
+        const category = categories[i];
+        const foodNameDiv = document.createElement('div')
+        const name = document.createElement('h3')
+        name.innerText = category.strCategory;
+        const foodImage = document.createElement('p')
+        foodImage.innerHTML = `<img src="${category.strCategoryThumb}" alt="" />`
+        foodNameDiv.appendChild(name);
+        foodNameDiv.appendChild(foodImage);
+        foodDiv.appendChild(foodNameDiv);
+
+        }
 }
