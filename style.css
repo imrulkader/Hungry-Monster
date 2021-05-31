@@ -1,0 +1,13 @@
+.food{
+
+    border: 1px solid goldenrod;
+    width: 20%;
+    display: inline-block;
+    border-radius: 20px;
+    padding: 10px;
+    margin: 10px;
+    
+}
+.pic{
+    width: 200px;
+}

@@ -8,14 +8,15 @@ const displayFood = categories => {
     const foodDiv = document.getElementById("food-details");
     for (let i = 0; i < categories.length; i++) {
         const category = categories[i];
-        const foodNameDiv = document.createElement('div')
-        const name = document.createElement('h3')
-        name.innerText = category.strCategory;
-        const foodImage = document.createElement('p')
-        foodImage.innerHTML = `<img src="${category.strCategoryThumb}" alt="" />`
-        foodNameDiv.appendChild(name);
-        foodNameDiv.appendChild(foodImage);
-        foodDiv.appendChild(foodNameDiv);
+        const foodDetails = document.createElement('div')
+        foodDetails.className = 'food';
+        const foodInfo = `
+        <h3>${category.strCategory}</h3>
+        <img class="pic" src="${category.strCategoryThumb}" alt="" />
+
+        `
+        foodDetails.innerHTML = foodInfo;
+        foodDiv.appendChild(foodDetails);
 
         }
 }
